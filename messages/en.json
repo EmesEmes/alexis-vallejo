@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "research": "Research",
+    "photography": "Photography",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "role": "Agricultural Engineer · PhD Candidate in Territorial Sustainability · FAO",
+    "bio": "I work at the intersection of agriculture, territory, and sustainability. This is my personal page where I share my research, studies I supervise, and some photographs along the way.",
+    "cta_research": "View research",
+    "cta_photos": "View photography"
+  },
+  "research": {
+    "title": "Research",
+    "subtitle": "Publications, doctoral thesis and supervised studies",
+    "filter_all": "All",
+    "filter_doctoral": "Doctoral",
+    "filter_supervised": "Supervised",
+    "document": "View document",
+    "no_results": "No publications yet"
+  },
+  "photography": {
+    "title": "Photography",
+    "subtitle": "A selection of images along the way"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to reach out"
+  },
+  "admin": {
+    "login": "Sign in",
+    "logout": "Sign out",
+    "email": "Email",
+    "password": "Password",
+    "publications": "Publications",
+    "photos": "Photos",
+    "new_publication": "New publication",
+    "upload_photo": "Upload photo",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "title_label": "Title",
+    "year_label": "Year",
+    "type_label": "Type",
+    "type_doctoral": "Doctoral",
+    "type_supervised": "Supervised",
+    "drive_url": "Google Drive link (optional)",
+    "cover_image": "Cover image (optional)"
+  }
+}
