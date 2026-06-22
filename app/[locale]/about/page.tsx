@@ -22,7 +22,7 @@ export default function AboutPage() {
     <div className="space-y-16">
       {/* Header con foto */}
       <section className="pt-8 flex flex-col md:flex-row md:items-start gap-10">
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <div className="w-36 h-36 rounded-full overflow-hidden border border-gray-100">
             <Image
               src="/alexis.jpg"
@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div className="space-y-0">
           {education.map((item, i) => (
             <div key={i} className="flex gap-6 py-6 border-b border-gray-100">
-              <div className="flex-shrink-0 w-28 text-right pt-0.5">
+              <div className="shrink-0 w-28 text-right pt-0.5">
                 <span className="text-xs text-gray-300">{item.year}</span>
               </div>
               <div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="space-y-0">
           {experience.map((item, i) => (
             <div key={i} className="flex gap-6 py-6 border-b border-gray-100">
-              <div className="flex-shrink-0 w-28 text-right pt-0.5">
+              <div className="shrink-0 w-28 text-right pt-0.5">
                 <span className="text-xs text-gray-300">{item.year}</span>
               </div>
               <div className="flex-1">
