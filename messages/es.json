@@ -2,8 +2,12 @@
   "nav": {
     "home": "Inicio",
     "research": "Investigación",
-    "photography": "Fotografía",
-    "contact": "Contacto"
+    "photography": "Fotografía"
+  },
+  "footer": {
+    "email": "alexisvallejo@mail.com",
+    "phone": "+593 99 000 0000",
+    "linkedin": "www.linkedin.com/in/alexixakd/"
   },
   "home": {
     "greeting": "Hola, soy",
@@ -24,10 +28,6 @@
   "photography": {
     "title": "Fotografía",
     "subtitle": "Una selección de imágenes del camino"
-  },
-  "contact": {
-    "title": "Contacto",
-    "subtitle": "No dudes en escribirme"
   },
   "admin": {
     "login": "Iniciar sesión",

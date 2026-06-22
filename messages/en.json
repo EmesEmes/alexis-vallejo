@@ -2,8 +2,12 @@
   "nav": {
     "home": "Home",
     "research": "Research",
-    "photography": "Photography",
-    "contact": "Contact"
+    "photography": "Photography"
+  },
+  "footer": {
+    "email": "alexisvallejo@mail.com",
+    "phone": "+593 99 000 0000",
+    "linkedin": "www.linkedin.com/in/alexixakd/"
   },
   "home": {
     "greeting": "Hi, I'm",
@@ -24,10 +28,6 @@
   "photography": {
     "title": "Photography",
     "subtitle": "A selection of images along the way"
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Feel free to reach out"
   },
   "admin": {
     "login": "Sign in",

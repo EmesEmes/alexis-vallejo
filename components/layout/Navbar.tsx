@@ -16,7 +16,6 @@ export default function Navbar() {
     { href: "/" as const, label: t("home") },
     { href: "/research" as const, label: t("research") },
     { href: "/photography" as const, label: t("photography") },
-    { href: "/contact" as const, label: t("contact") },
   ];
 
   const switchLocale = () => {
