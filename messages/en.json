@@ -2,32 +2,98 @@
   "nav": {
     "home": "Home",
     "research": "Research",
-    "photography": "Photography"
+    "photography": "Photography",
+    "about": "About"
   },
   "footer": {
     "email": "alexisvallejo@mail.com",
     "phone": "+593 99 000 0000",
-    "linkedin": "www.linkedin.com/in/alexixakd/"
+    "linkedin": "www.linkedin.com/in/alexixakd/",
+    "scholar": "Google Scholar"
   },
   "home": {
-    "greeting": "Hi, I'm",
-    "role": "Agricultural Engineer · PhD Candidate in Territorial Sustainability · FAO",
-    "bio": "I work at the intersection of agriculture, territory, and sustainability. This is my personal page where I share my research, studies I supervise, and some photographs along the way.",
+    "role": "Agricultural Engineer · MEAL Specialist · FAO",
+    "bio": "Agricultural Engineer with two Master's degrees in Project Management and Development Strategies. PhD candidate in Territorial Sustainability at Universidad de Cuenca. Regional MEAL Specialist at FAO for Latin America and the Caribbean.",
     "cta_research": "View research",
-    "cta_photos": "View photography"
+    "cta_about": "Professional profile"
   },
   "research": {
     "title": "Research",
-    "subtitle": "Publications, doctoral thesis and supervised studies",
-    "filter_all": "All",
-    "filter_doctoral": "Doctoral",
-    "filter_supervised": "Supervised",
+    "subtitle": "Publications and research studies",
+    "filter_all": "View all",
     "document": "View document",
     "no_results": "No publications yet"
   },
   "photography": {
     "title": "Photography",
     "subtitle": "A selection of images along the way"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Academic and professional background",
+    "education_title": "Education",
+    "experience_title": "Professional experience",
+    "scholar_label": "View publications on Google Scholar",
+    "education": [
+      {
+        "degree": "PhD in Territorial Sustainability (in progress)",
+        "institution": "Universidad de Cuenca",
+        "year": "2025 — present"
+      },
+      {
+        "degree": "Master in Strategies and Technologies for Development",
+        "institution": "Universidad Politécnica de Madrid",
+        "year": "2018 — 2020"
+      },
+      {
+        "degree": "Master's degree in Project Management",
+        "institution": "Pontificia Universidad Católica del Ecuador",
+        "year": "2015 — 2017"
+      },
+      {
+        "degree": "Agricultural Engineer",
+        "institution": "Universidad Central del Ecuador",
+        "year": "2005 — 2012"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Regional MEAL Specialist",
+        "organization": "FAO — Food and Agriculture Organization of the United Nations",
+        "year": "2021 — present",
+        "description": "Supporting programs and projects of the Emergency and Resilience team in Latin America and the Caribbean. Building tools and methodologies for Monitoring, Evaluation, Accountability and Learning."
+      },
+      {
+        "role": "Lecturer — Agricultural Economics",
+        "organization": "Universidad Central del Ecuador",
+        "year": "2024",
+        "description": "Agricultural Economics course at the Faculty of Agricultural Sciences."
+      },
+      {
+        "role": "M&E Project Manager",
+        "organization": "RET International",
+        "year": "2020 — 2021",
+        "description": "National coordinator for the M&E system implementation for IOM, ECW-UNICEF and ECHO programs in Ecuador."
+      },
+      {
+        "role": "Monitoring and Evaluation Associate",
+        "organization": "UN Women",
+        "year": "2019 — 2020",
+        "description": "National coordinator for the M&E system of the binational Colombia-Ecuador project in coordination with UNHCR and UNICEF."
+      },
+      {
+        "role": "Programme Officer",
+        "organization": "RET International",
+        "year": "2017 — 2018",
+        "description": "National coordination of the M&E system and technical-operational advisory for humanitarian assistance projects."
+      },
+      {
+        "role": "Programme Assistant",
+        "organization": "World Food Programme",
+        "year": "2015 — 2016",
+        "description": "Management and support to national sub-offices. Recovery, protection and Family Farming integration projects."
+      }
+    ]
   },
   "admin": {
     "login": "Sign in",
@@ -44,9 +110,7 @@
     "edit": "Edit",
     "title_label": "Title",
     "year_label": "Year",
-    "type_label": "Type",
-    "type_doctoral": "Doctoral",
-    "type_supervised": "Supervised",
+    "category_label": "Category",
     "drive_url": "Google Drive link (optional)",
     "cover_image": "Cover image (optional)"
   }

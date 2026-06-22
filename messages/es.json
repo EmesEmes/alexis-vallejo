@@ -2,32 +2,98 @@
   "nav": {
     "home": "Inicio",
     "research": "Investigación",
-    "photography": "Fotografía"
+    "photography": "Fotografía",
+    "about": "Sobre mí"
   },
   "footer": {
     "email": "alexisvallejo@mail.com",
     "phone": "+593 99 000 0000",
-    "linkedin": "www.linkedin.com/in/alexixakd/"
+    "linkedin": "www.linkedin.com/in/alexixakd/",
+    "scholar": "Google Académico"
   },
   "home": {
-    "greeting": "Hola, soy",
-    "role": "Ingeniero Agrónomo · Doctorando en Sostenibilidad Territorial · FAO",
-    "bio": "Trabajo en la intersección entre la agricultura, el territorio y la sostenibilidad. Esta es mi página personal donde comparto mis investigaciones, estudios que superviso y algunas fotografías del camino.",
+    "role": "Ingeniero Agrónomo · Especialista MEAL · FAO",
+    "bio": "Ingeniero Agrónomo, Magíster en Gestión de Proyectos y en Estrategias para el Desarrollo. Doctorando en Sostenibilidad Territorial en la Universidad de Cuenca. Especialista Regional de Monitoreo, Evaluación, Accountability y Aprendizaje (MEAL) en la FAO para América Latina y el Caribe.",
     "cta_research": "Ver investigaciones",
-    "cta_photos": "Ver fotografías"
+    "cta_about": "Perfil profesional"
   },
   "research": {
     "title": "Investigación",
-    "subtitle": "Publicaciones, tesis doctoral y estudios supervisados",
-    "filter_all": "Todos",
-    "filter_doctoral": "Doctorado",
-    "filter_supervised": "Supervisados",
+    "subtitle": "Publicaciones y estudios de investigación",
+    "filter_all": "Ver todo",
     "document": "Ver documento",
     "no_results": "No hay publicaciones aún"
   },
   "photography": {
     "title": "Fotografía",
     "subtitle": "Una selección de imágenes del camino"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Trayectoria académica y profesional",
+    "education_title": "Formación académica",
+    "experience_title": "Experiencia profesional",
+    "scholar_label": "Ver publicaciones en Google Académico",
+    "education": [
+      {
+        "degree": "Doctor en Sostenibilidad Territorial (en curso)",
+        "institution": "Universidad de Cuenca",
+        "year": "2025 — actualidad"
+      },
+      {
+        "degree": "Máster en Estrategias y Tecnologías para el Desarrollo",
+        "institution": "Universidad Politécnica de Madrid",
+        "year": "2018 — 2020"
+      },
+      {
+        "degree": "Máster en Gestión de Proyectos",
+        "institution": "Pontificia Universidad Católica del Ecuador",
+        "year": "2015 — 2017"
+      },
+      {
+        "degree": "Ingeniero Agrónomo",
+        "institution": "Universidad Central del Ecuador",
+        "year": "2005 — 2012"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Especialista Regional MEAL",
+        "organization": "FAO — Organización de las Naciones Unidas para la Alimentación y la Agricultura",
+        "year": "2021 — actualidad",
+        "description": "Apoyo a programas y proyectos del equipo de Emergencias y Resiliencia en América Latina y el Caribe. Desarrollo de herramientas y metodologías de Monitoreo, Evaluación, Accountability y Aprendizaje."
+      },
+      {
+        "role": "Docente — Economía Agrícola",
+        "organization": "Universidad Central del Ecuador",
+        "year": "2024",
+        "description": "Cátedra de Economía Agrícola en la Facultad de Ciencias Agrícolas."
+      },
+      {
+        "role": "Project Manager M&E",
+        "organization": "RET International",
+        "year": "2020 — 2021",
+        "description": "Responsable nacional de la implementación del sistema de M&E para programas OIM, ECW-UNICEF y ECHO en Ecuador."
+      },
+      {
+        "role": "Asociado de Monitoreo y Evaluación",
+        "organization": "UN Women",
+        "year": "2019 — 2020",
+        "description": "Responsable nacional del sistema de M&E del proyecto binacional Colombia-Ecuador en coordinación con ACNUR y UNICEF."
+      },
+      {
+        "role": "Programme Officer",
+        "organization": "RET International",
+        "year": "2017 — 2018",
+        "description": "Coordinación nacional del sistema de M&E y asesoramiento técnico-operativo en proyectos de asistencia humanitaria."
+      },
+      {
+        "role": "Programme Assistant",
+        "organization": "World Food Programme",
+        "year": "2015 — 2016",
+        "description": "Gestión y apoyo a sub oficinas a nivel nacional. Proyectos de recuperación, protección e inserción de la Agricultura Familiar Campesina."
+      }
+    ]
   },
   "admin": {
     "login": "Iniciar sesión",
@@ -44,9 +110,7 @@
     "edit": "Editar",
     "title_label": "Título",
     "year_label": "Año",
-    "type_label": "Tipo",
-    "type_doctoral": "Doctorado",
-    "type_supervised": "Supervisado",
+    "category_label": "Categoría",
     "drive_url": "Enlace a Google Drive (opcional)",
     "cover_image": "Imagen de portada (opcional)"
   }

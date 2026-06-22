@@ -47,6 +47,12 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/about"
+            className="text-sm font-medium text-secondary hover:text-secondary-dark transition-colors"
+          >
+            {t("about")}
+          </Link>
           <button
             onClick={switchLocale}
             className="text-sm font-medium text-secondary border border-secondary rounded px-2 py-0.5 hover:bg-secondary hover:text-white transition-colors cursor-pointer"
@@ -87,6 +93,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="w-full h-px bg-gray-100" />
+            <Link
+              href="/about"
+              onClick={() => setIsOpen(false)}
+              className="text-sm font-medium text-secondary py-1"
+            >
+              {t("about")}
+            </Link>
           </div>
         </div>
       )}

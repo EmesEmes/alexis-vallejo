@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Mail, Phone } from "lucide-react";
+import Image from "next/image";
 
 const LinkedInIcon = () => (
   <svg
@@ -47,32 +48,48 @@ export default function HomePage() {
   return (
     <div className="space-y-24">
       {/* Hero */}
-      <section className="pt-16 pb-8 max-w-2xl">
-        <p className="text-sm uppercase tracking-widest text-secondary mb-4 font-medium">
-          {t("greeting")}
-        </p>
-        <h1 className="font-serif text-5xl md:text-6xl font-light text-gray-900 mb-6 leading-tight">
-          Alexis Vallejo
-        </h1>
-        <p className="text-sm text-gray-400 tracking-wide mb-8">{t("role")}</p>
-        <p className="text-gray-600 leading-relaxed text-base mb-10 max-w-xl">
-          {t("bio")}
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/research"
-            className="inline-flex items-center gap-2 bg-secondary text-white text-sm px-5 py-2.5 rounded hover:bg-secondary-dark transition-colors"
-          >
-            {t("cta_research")}
-            <ArrowRight size={15} />
-          </Link>
-          <Link
-            href="/photography"
-            className="inline-flex items-center gap-2 border border-gray-300 text-gray-600 text-sm px-5 py-2.5 rounded hover:border-secondary hover:text-secondary transition-colors"
-          >
-            {t("cta_photos")}
-            <ArrowRight size={15} />
-          </Link>
+      <section className="pt-16 pb-8 flex flex-col md:flex-row md:items-center gap-12">
+        {/* Foto */}
+        <div className="shrink-0">
+          <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border border-gray-100">
+            <Image
+              src="/alexis.jpg"
+              alt="Alexis Paúl Vallejo Mancero"
+              width={208}
+              height={208}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Texto */}
+        <div className="flex-1">
+          <h1 className="font-serif text-4xl md:text-5xl font-light text-gray-900 mb-3 leading-tight">
+            Alexis Paúl Vallejo Mancero
+          </h1>
+          <p className="text-sm text-secondary tracking-wide mb-6 font-medium">
+            {t("role")}
+          </p>
+          <p className="text-gray-600 leading-relaxed text-base mb-8 max-w-xl">
+            {t("bio")}
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/research"
+              className="inline-flex items-center gap-2 bg-secondary text-white text-sm px-5 py-2.5 rounded hover:bg-secondary-dark transition-colors"
+            >
+              {t("cta_research")}
+              <ArrowRight size={15} />
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 border border-gray-300 text-gray-600 text-sm px-5 py-2.5 rounded hover:border-secondary hover:text-secondary transition-colors"
+            >
+              {t("cta_about")}
+              <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       </section>
 
