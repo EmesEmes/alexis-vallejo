@@ -28,9 +28,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <Navbar />
-      <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
-        {children}
-      </main>
+      <main className="flex-1 w-full">{children}</main>
       <Footer />
     </NextIntlClientProvider>
   );

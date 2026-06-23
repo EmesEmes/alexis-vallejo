@@ -1,7 +1,8 @@
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Mail, Phone } from "lucide-react";
-import Image from "next/image";
+import HeroSection from "@/components/layout/HeroSection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const LinkedInIcon = () => (
   <svg
@@ -21,11 +22,18 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-export default function HomePage() {
-  const t = useTranslations("home");
-  const tResearch = useTranslations("research");
-  const tPhotography = useTranslations("photography");
-  const tFooter = useTranslations("footer");
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("home");
+  const tResearch = await getTranslations("research");
+  const tPhotography = await getTranslations("photography");
+  const tFooter = await getTranslations("footer");
 
   const contactLinks = [
     {
@@ -46,153 +54,124 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="space-y-24">
-      {/* Hero */}
-      <section className="pt-16 pb-8 flex flex-col md:flex-row md:items-center gap-12">
-        {/* Foto */}
-        <div className="shrink-0">
-          <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border border-gray-100">
-            <Image
-              src="/alexis.jpg"
-              alt="Alexis Paúl Vallejo Mancero"
-              width={208}
-              height={208}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-        </div>
+    <div>
+      {/* Hero full screen */}
+      <HeroSection
+        name="Alexis Paúl Vallejo Mancero"
+        bio={t("bio")}
+        ctaResearch={t("cta_research")}
+        ctaAbout={t("cta_about")}
+      />
 
-        {/* Texto */}
-        <div className="flex-1">
-          <h1 className="font-serif text-4xl md:text-5xl font-light text-gray-900 mb-3 leading-tight">
-            Alexis Paúl Vallejo Mancero
-          </h1>
-          <p className="text-sm text-secondary tracking-wide mb-6 font-medium">
-            {t("role")}
-          </p>
-          <p className="text-gray-600 leading-relaxed text-base mb-8 max-w-xl">
-            {t("bio")}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/research"
-              className="inline-flex items-center gap-2 bg-secondary text-white text-sm px-5 py-2.5 rounded hover:bg-secondary-dark transition-colors"
-            >
-              {t("cta_research")}
-              <ArrowRight size={15} />
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 border border-gray-300 text-gray-600 text-sm px-5 py-2.5 rounded hover:border-secondary hover:text-secondary transition-colors"
-            >
-              {t("cta_about")}
-              <ArrowRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="w-12 h-px bg-secondary" />
-
-      {/* Investigación reciente */}
-      <section>
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="font-serif text-2xl font-light text-gray-900">
-            {tResearch("title")}
-          </h2>
-          <Link
-            href="/research"
-            className="text-sm text-secondary hover:text-secondary-dark transition-colors inline-flex items-center gap-1"
-          >
-            {tResearch("filter_all")}
-            <ArrowRight size={13} />
-          </Link>
-        </div>
-
-        <div className="space-y-6">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="flex gap-6 py-6 border-b border-gray-100 group"
-            >
-              <div className="shrink-0 w-16 text-right">
-                <span className="text-sm text-gray-300 font-serif">2024</span>
-              </div>
-              <div className="flex-1">
-                <span className="text-xs uppercase tracking-widest text-secondary mb-2 block">
-                  Doctorado
-                </span>
-                <h3 className="font-serif text-lg text-gray-900 group-hover:text-secondary transition-colors leading-snug">
-                  Título de la publicación {i} — ejemplo de investigación en
-                  sostenibilidad territorial
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Fotografía preview */}
-      <section>
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="font-serif text-2xl font-light text-gray-900">
-            {tPhotography("title")}
-          </h2>
-          <Link
-            href="/photography"
-            className="text-sm text-secondary hover:text-secondary-dark transition-colors inline-flex items-center gap-1"
-          >
-            {tResearch("filter_all")}
-            <ArrowRight size={13} />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div
-              key={i}
-              className="aspect-square bg-gray-100 rounded overflow-hidden"
-            >
-              <div className="w-full h-full bg-linear-to-br from-gray-100 to-gray-200" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contacto */}
-      <section className="pb-8">
-        <div className="w-12 h-px bg-secondary mb-12" />
-        <h2 className="font-serif text-2xl font-light text-gray-900 mb-8">
-          Contacto
-        </h2>
-        <div className="flex flex-col gap-4 max-w-sm">
-          {contactLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={
-                  link.href.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
-                className="flex items-center gap-4 py-4 border-b border-gray-100 group"
+      {/* Resto del contenido */}
+      <div className="max-w-5xl mx-auto px-6 py-24 space-y-24">
+        {/* Investigación reciente */}
+        <ScrollReveal>
+          <section>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="font-serif text-2xl font-light text-gray-900">
+                {tResearch("title")}
+              </h2>
+              <Link
+                href="/research"
+                className="text-sm text-secondary hover:text-secondary-dark transition-colors inline-flex items-center gap-1"
               >
-                <span className="text-gray-300 group-hover:text-secondary transition-colors shrink-0">
-                  <Icon size={14} />
-                </span>
-                <span className="text-sm text-gray-600 group-hover:text-secondary transition-colors">
-                  {link.label}
-                </span>
-              </a>
-            );
-          })}
-        </div>
-      </section>
+                {tResearch("filter_all")}
+                <ArrowRight size={13} />
+              </Link>
+            </div>
+            <div className="space-y-6">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="flex gap-6 py-6 border-b border-gray-100 group"
+                >
+                  <div className="flex-shrink-0 w-16 text-right">
+                    <span className="text-sm text-gray-300 font-serif">
+                      2024
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-xs uppercase tracking-widest text-secondary mb-2 block">
+                      Doctorado
+                    </span>
+                    <h3 className="font-serif text-lg text-gray-900 group-hover:text-secondary transition-colors leading-snug">
+                      Título de la publicación {i} — ejemplo de investigación en
+                      sostenibilidad territorial
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Divider */}
+        <div className="w-12 h-px bg-secondary" />
+
+        {/* Fotografía preview */}
+        <ScrollReveal>
+          <section>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="font-serif text-2xl font-light text-gray-900">
+                {tPhotography("title")}
+              </h2>
+              <Link
+                href="/photography"
+                className="text-sm text-secondary hover:text-secondary-dark transition-colors inline-flex items-center gap-1"
+              >
+                {tResearch("filter_all")}
+                <ArrowRight size={13} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div
+                  key={i}
+                  className="aspect-square bg-gray-100 rounded overflow-hidden"
+                >
+                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200" />
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Contacto */}
+        <ScrollReveal>
+          <section className="pb-8">
+            <div className="w-12 h-px bg-secondary mb-12" />
+            <h2 className="font-serif text-2xl font-light text-gray-900 mb-8">
+              Contacto
+            </h2>
+            <div className="flex flex-col gap-4 max-w-sm">
+              {contactLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      link.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="flex items-center gap-4 py-4 border-b border-gray-100 group"
+                  >
+                    <span className="text-gray-300 group-hover:text-secondary transition-colors flex-shrink-0">
+                      <Icon size={14} />
+                    </span>
+                    <span className="text-sm text-gray-600 group-hover:text-secondary transition-colors">
+                      {link.label}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        </ScrollReveal>
+      </div>
     </div>
   );
 }
