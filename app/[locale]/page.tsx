@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import HeroSection from "@/components/layout/HeroSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import PhotoGallery from "@/components/ui/PhotoGallery";
+import { createClient } from "@/lib/supabase/server";
 
 const LinkedInIcon = () => (
   <svg
@@ -34,6 +36,20 @@ export default async function HomePage({ params }: Props) {
   const tResearch = await getTranslations("research");
   const tPhotography = await getTranslations("photography");
   const tFooter = await getTranslations("footer");
+
+  const supabase = await createClient();
+
+  const { data: publications } = await supabase
+    .from("publications")
+    .select("id, title_es, title_en, category, year")
+    .order("year", { ascending: false })
+    .limit(3);
+
+  const { data: photos } = await supabase
+    .from("photos")
+    .select("id, url, title_es, title_en")
+    .order("created_at", { ascending: false })
+    .limit(6);
 
   const contactLinks = [
     {
@@ -68,7 +84,7 @@ export default async function HomePage({ params }: Props) {
         {/* Investigación reciente */}
         <ScrollReveal>
           <section>
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-4">
               <h2 className="font-serif text-2xl font-light text-gray-900">
                 {tResearch("title")}
               </h2>
@@ -80,28 +96,39 @@ export default async function HomePage({ params }: Props) {
                 <ArrowRight size={13} />
               </Link>
             </div>
-            <div className="space-y-6">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="flex gap-6 py-6 border-b border-gray-100 group"
-                >
-                  <div className="flex-shrink-0 w-16 text-right">
-                    <span className="text-sm text-gray-300 font-serif">
-                      2024
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-xs uppercase tracking-widest text-secondary mb-2 block">
-                      Doctorado
-                    </span>
-                    <h3 className="font-serif text-lg text-gray-900 group-hover:text-secondary transition-colors leading-snug">
-                      Título de la publicación {i} — ejemplo de investigación en
-                      sostenibilidad territorial
-                    </h3>
-                  </div>
-                </div>
-              ))}
+            <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-xl">
+              {t("research_intro")}
+            </p>
+            <div className="space-y-0">
+              {publications && publications.length > 0 ? (
+                publications.map((pub) => (
+                  <Link
+                    key={pub.id}
+                    href={`/research/${pub.id}`}
+                    className="flex gap-6 py-6 border-b border-gray-100 group block"
+                  >
+                    <div className="flex-shrink-0 w-16 text-right">
+                      <span className="text-sm text-gray-300 font-serif">
+                        {pub.year}
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-xs uppercase tracking-widest text-secondary mb-2 block">
+                        {pub.category || ""}
+                      </span>
+                      <h3 className="font-serif text-lg text-gray-900 group-hover:text-secondary transition-colors leading-snug">
+                        {locale === "es"
+                          ? pub.title_es
+                          : pub.title_en || pub.title_es}
+                      </h3>
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                <p className="text-sm text-gray-400 py-6">
+                  {tResearch("no_results")}
+                </p>
+              )}
             </div>
           </section>
         </ScrollReveal>
@@ -112,7 +139,7 @@ export default async function HomePage({ params }: Props) {
         {/* Fotografía preview */}
         <ScrollReveal>
           <section>
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-4">
               <h2 className="font-serif text-2xl font-light text-gray-900">
                 {tPhotography("title")}
               </h2>
@@ -124,16 +151,23 @@ export default async function HomePage({ params }: Props) {
                 <ArrowRight size={13} />
               </Link>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square bg-gray-100 rounded overflow-hidden"
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200" />
-                </div>
-              ))}
-            </div>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-xl">
+              {t("photography_intro")}
+            </p>
+            {photos && photos.length > 0 ? (
+              <PhotoGallery photos={photos} locale={locale} />
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div
+                    key={i}
+                    className="aspect-square bg-gray-100 rounded overflow-hidden"
+                  >
+                    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200" />
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         </ScrollReveal>
 
@@ -141,9 +175,12 @@ export default async function HomePage({ params }: Props) {
         <ScrollReveal>
           <section className="pb-8">
             <div className="w-12 h-px bg-secondary mb-12" />
-            <h2 className="font-serif text-2xl font-light text-gray-900 mb-8">
-              Contacto
+            <h2 className="font-serif text-2xl font-light text-gray-900 mb-3">
+              {t("contact_title")}
             </h2>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-xl">
+              {t("contact_intro")}
+            </p>
             <div className="flex flex-col gap-4 max-w-sm">
               {contactLinks.map((link) => {
                 const Icon = link.icon;

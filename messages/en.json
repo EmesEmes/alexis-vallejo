@@ -13,9 +13,13 @@
   },
   "home": {
     "role": "Agricultural Engineer · MEAL Specialist · FAO",
-    "bio": "Agricultural Engineer with two Master's degrees in Project Management and Development Strategies. PhD candidate in Territorial Sustainability at Universidad de Cuenca. Regional MEAL Specialist at FAO for Latin America and the Caribbean.",
+    "bio": "I'm Alexis. I work in monitoring and evaluation for FAO across Latin America and the Caribbean. I'm doing my PhD in territorial sustainability and I love photography. Here I share my research and some images along the way.",
     "cta_research": "View research",
-    "cta_about": "Professional profile"
+    "cta_about": "More about me",
+    "research_intro": "Research is at the heart of my work. Here you'll find updates on my doctoral thesis, the studies I supervise, and other publications I've developed throughout my career.",
+    "photography_intro": "Photography is one of my greatest passions. I love capturing landscapes, moments and places I come across along the way — whether working in the field for FAO or exploring on my own. This is a small selection of my favourite shots.",
+    "contact_title": "Contact",
+    "contact_intro": "If you'd like to chat about research, sustainability, development projects or just say hello, feel free to reach out. I'm always open to new conversations and collaborations."
   },
   "research": {
     "title": "Research",

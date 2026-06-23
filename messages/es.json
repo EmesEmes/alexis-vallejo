@@ -13,9 +13,13 @@
   },
   "home": {
     "role": "Ingeniero Agrónomo · Especialista MEAL · FAO",
-    "bio": "Ingeniero Agrónomo, Magíster en Gestión de Proyectos y en Estrategias para el Desarrollo. Doctorando en Sostenibilidad Territorial en la Universidad de Cuenca. Especialista Regional de Monitoreo, Evaluación, Accountability y Aprendizaje (MEAL) en la FAO para América Latina y el Caribe.",
+    "bio": "Soy Alexis, trabajo en monitoreo y evaluación de proyectos para la FAO en América Latina y el Caribe. Estoy haciendo mi doctorado en sostenibilidad territorial y me apasiona la fotografía. Aquí comparto mis investigaciones y algunas fotos del camino.",
     "cta_research": "Ver investigaciones",
-    "cta_about": "Perfil profesional"
+    "cta_about": "Más sobre mí",
+    "research_intro": "La investigación es el centro de mi trabajo. Aquí encontrarás los avances de mi tesis doctoral, los estudios que superviso y otras publicaciones que he desarrollado a lo largo de mi carrera.",
+    "photography_intro": "La fotografía es uno de mis grandes pasatiempos. Me gusta capturar paisajes, momentos y lugares que me encuentro en el camino — ya sea trabajando en campo para la FAO o explorando por cuenta propia. Esta es una pequeña muestra de mis fotos favoritas.",
+    "contact_title": "Contacto",
+    "contact_intro": "Si quieres charlar sobre investigación, sostenibilidad, proyectos de desarrollo o simplemente saludar, no dudes en escribirme. Siempre estoy abierto a nuevas conversaciones y colaboraciones."
   },
   "research": {
     "title": "Investigación",
